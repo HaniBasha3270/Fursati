@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Forsati Platform</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .contact-container {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 700px;
+    }
+
+    h2 {
+      color: #007bff;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+
+    .info-item {
+      width: 48%;
+      margin-bottom: 15px;
+    }
+
+    .info-item h3 {
+      color: #0056b3;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .info-item p {
+      margin: 0;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    form {
+      border-top: 1px solid #ccc;
+      padding-top: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      resize: none;
+    }
+
+    button {
+      width: 100%;
+      background: #007bff;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    @media (max-width: 600px) {
+      .info-item {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contact-container">
+    <h2>Contact Us</h2>
+
+    <div class="contact-info">
+      <div class="info-item">
+        <h3> Address</h3>
+        <p>Forsati HQ, Kigali, Rwanda</p>
+      </div>
+      <div class="info-item">
+        <h3>📧 Email</h3>
+        <p>hanibasha3270@gmail.com</p>
+      </div>
+      <div class="info-item">
+        <h3>📞 Phone</h3>
+        <p>+250 795 741 042</p>
+      </div>
+      <div class="info-item">
+        <h3>🌐 Website</h3>
+        <p>www.forsati.org</p>
+      </div>
+    </div>
+
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="4" placeholder="Your Message..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+</body>
+</html>

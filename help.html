@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Help - Forsati Platform</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .help-container {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      max-width: 600px;
+    }
+
+    .help-container h2 {
+      color: #007bff;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 26px;
+    }
+
+    .faq {
+      margin-bottom: 20px;
+    }
+
+    .faq h3 {
+      color: #0056b3;
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+
+    .faq p {
+      margin: 0 0 10px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    form {
+      border-top: 1px solid #ccc;
+      padding-top: 15px;
+    }
+
+    form h3 {
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      resize: none;
+    }
+
+    button {
+      width: 100%;
+      background: #007bff;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    @media (max-width: 480px) {
+      .help-container {
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="help-container">
+    <h2>Help & Support</h2>
+
+    <div class="faq">
+      <h3>1. How can I apply for a scholarship?</h3>
+      <p>Go to the “Scholarships” page and fill out the application form with your details.</p>
+
+      <h3>2. I forgot my password, what should I do?</h3>
+      <p>Click on “Forgot Password” on the login page and follow the reset instructions sent to your email.</p>
+
+      <h3>3. How can I contact support?</h3>
+      <p>You can use the contact form below to send us your question or issue directly.</p>
+    </div>
+
+    <form>
+      <h3>Contact Support</h3>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="4" placeholder="Describe your issue..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+</body>
+</html>
