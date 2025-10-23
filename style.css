@@ -19,6 +19,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
+    background-color: #c5d2ff;
    
 
 }
@@ -174,6 +175,7 @@ body {
 .btn-secondary:hover {
     background: var(--white);
     color: var(--text-dark);
+    
 }
 
 .hero-image img {
@@ -366,14 +368,69 @@ body {
     padding-top: 15px;
 }
 
-/* ====== Responsive ====== */
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-    }
+/* 🌐 Responsive Design */
+@media (max-width: 992px) {
+  .opportunities-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
 
-    .opportunities-grid {
-        grid-template-columns: 1fr;
-    }
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-section {
+    margin-bottom: 20px;
+  }
+
+  .cta-content h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  h2.section-title {
+    font-size: 1.5rem;
+  }
+
+  .opportunities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .opportunity-card {
+    padding: 15px;
+  }
+
+  .card-header, .card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-footer {
+    gap: 10px;
+  }
+
+  .apply-btn, .btn-primary {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  footer .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer .footer-section h4 {
+    margin-top: 15px;
+  }
+
+  .footer-bottom p {
+    font-size: 0.9rem;
+  }
 }
