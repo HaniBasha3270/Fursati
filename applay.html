@@ -7,7 +7,7 @@
      <style>
         body {
   font-family: Arial, sans-serif;
-  background: #e8efff;
+  background: #a4befc;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,7 +84,7 @@ button:hover {
 
       <label for="position">Position Applying For:</label>
       <input type="text" id="position" placeholder="Job title" required>
-      
+
 
       <label for="resume">Upload Resume / Document (PDF or DOCX):</label>
       <input type="file" id="resume" accept=".pdf,.doc,.docx" required>
@@ -99,15 +99,57 @@ button:hover {
 
 
     <script>
-        document.getElementById('applyForm').addEventListener('submit', function(event) {
-        event.preventDefault();
+      function doPost(e) {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const data = JSON.parse(e.postData.contents);
+
+  sheet.appendRow([
+    new Date(),
+    data.fullname,
+    data.email,
+    data.phone,
+    data.position,
+    data.resumeLink || "No file"
+  ]);
+
+  return ContentService
+    .createTextOutput(JSON.stringify({ result: "success", message: "Data added successfully!" }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+        document.getElementById('applyForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
     
-        // Simulate form submission
-        document.getElementById('response').textContent = "Thank you for your application, " + document.getElementById('fullname').value + "!";
-        
-        // Clear the form
-        this.reset();
-        }); 
+            const fullname = document.getElementById('fullname').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const position = document.getElementById('position').value;
+            const resumeInput = document.getElementById('resume');  
+            const resumeFile = resumeInput.files[0];
+            let resumeLink = "";
+            if (resumeFile) {
+                // Simulate file upload and get a link (in real scenario, upload to server or cloud storage)
+                resumeLink = "UploadedFileLink/" + resumeFile.name;
+            }
+            const data = {
+                fullname,
+                email,
+                phone,
+                position,
+                resumeLink
+            };
+            try {
+                const response = await fetch('YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL', {
+                    method: 'POST',
+                    contentType: 'application/json',
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+                document.getElementById('response').innerText = result.message;
+                document.getElementById('applyForm').reset();
+            } catch (error) {
+                document.getElementById('response').innerText = "Error submitting application.";
+            }
+        });
     </script>
 </body>
 </html>
